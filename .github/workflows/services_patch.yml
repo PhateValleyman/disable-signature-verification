@@ -1,4 +1,4 @@
-name: miuivs_patch_build
+name: services_patch
 
 on:
   workflow_dispatch:
@@ -9,7 +9,7 @@ on:
       default: ''
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     
     steps:
        - name: Checkout
@@ -24,7 +24,7 @@ jobs:
          run: |
             cd $GITHUB_WORKSPACE
             echo "Setting Vienam timezone"
-            sudo timedatectl set-timezone Asia/Ho_Chi_Minh
+            sudo timedatectl set-timezone Europe/Prague
       
        - name: Download Services.jar
          run: |
